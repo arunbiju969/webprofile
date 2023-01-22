@@ -1,0 +1,37 @@
+<div class="grid bg-blue-300 max-w-screen-xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
+  <div class="grid bg-blue-300 overflow-y-scroll pt-12 scrollbar-hide dark:bg-gray-900 max-h-[85vh] min-h-[80vh] max-w-screen-xl">
+    <div class="grid mt-10 place-content-center bg-blue-300 dark:bg-gray-900">
+
+
+      <div class="row">
+        <h1 class=" mb-4 text-4xl font-extrabold tracking-tight text-center leading-none md:text-5xl xl:text-6xl dark:text-white">
+          Connect</h1>
+          <div class="grid grid-cols-4 bg-gray-900  dark:bg-gray-300 gap-2 border lg:min-w-[60vw] max-md:min-w-[90vw] max-w-screen-xl rounded-l-full rounded-r-full">
+            {% for account in social  %}
+            <div class=" dark:border-black p-1 rounded-lg">
+              <a href="{{account.link}}">
+                <img src="{{account.icon.url}}" class="rounded-full dark:hidden max-h-10  mx-auto"
+                  alt="mockup">
+                <img src="{{account.dark_icon.url}}" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
+              </a>
+            </div>  
+            {% endfor %}
+          </div>
+      </div>
+
+
+    </div>  
+  </div>
+  <div class=" bg-blue-300 dark:bg-gray-900 place-content-start max-w-screen-xl">
+    <div class="text-center rotate-180">
+      <a href="#about">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+          class="mx-auto fill-gray-700 dark:fill-gray-50 animate-bounce" viewBox="0 0 16 16">
+          <path
+            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+  

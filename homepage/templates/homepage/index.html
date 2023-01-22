@@ -1,0 +1,13 @@
+<!-- templates/index.html -->
+
+{% extends "_base.html" %}
+{% load static %}
+
+
+{% block pages %}
+{% include 'homepage/snippets/about.html' with next_id='projects' self_id='about' %}
+{% include 'homepage/snippets/projects.html' with next_id='certifications' self_id='projects' %}
+{% include 'homepage/snippets/certifications.html' with next_id='contact' self_id='certifications' %}
+{% include 'homepage/snippets/getintouch.html' with next_id='about' self_id='contact' %}
+{% endblock pages %}
+
