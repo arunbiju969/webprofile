@@ -2,3 +2,4 @@ node_modules
 .env
 .vercel
 webprofile_venv
+homepage/uploads/
