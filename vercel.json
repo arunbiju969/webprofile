@@ -1,13 +1,21 @@
 
 {
-    "builds": [{
+    "builds": [
+        
+        {     
         "src": "webprofile/wsgi.py",
-        "use": "@natanffs/vercel-python-wsgi",
+        "use": "@vercel/python3",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-    }],
+        },
+        {     
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {"distDir": "staticfiles_build"}
+        }
+],
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/static(.*)",
             "dest": "webprofile/wsgi.py"
         }
     ]
