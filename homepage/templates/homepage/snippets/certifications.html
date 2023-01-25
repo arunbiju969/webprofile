@@ -1,6 +1,12 @@
 <div class="grid bg-blue-300 max-w-screen-xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
   <div class="bg-blue-300 overflow-y-scroll pt-12 scrollbar-hide dark:bg-gray-900 max-h-[85vh] min-h-[80vh] max-w-screen-xl">
-    <div class="lg:grid lg:grid-cols-3 lg:gap-4 mt-10 bg-blue-300 dark:bg-gray-900">
+
+    <div class="lg:col-span-12 mt-10 text-center max-h-[25vh]">
+      <h1 class="text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+        Certifications</h1>
+    </div>
+
+    <div class="lg:grid lg:grid-cols-3 mt-5 lg:gap-4 bg-blue-300 dark:bg-gray-900">
 
       {% for certificate in certificates %}
 

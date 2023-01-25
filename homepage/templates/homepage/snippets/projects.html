@@ -1,31 +1,37 @@
-<div class="grid bg-blue-300 max-w-screen-xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
-  <div class="bg-blue-300 pt-12 dark:bg-gray-900 scrollbar-hide max-h-[85vh] min-h-[80vh] overflow-y-scroll max-w-screen-xl">
-    <div class="lg:grid lg:grid-cols-1 lg:gap-4 mt-10 bg-blue-300 dark:bg-gray-900">
+{% load static %}
+
+<div class="grid bg-blue-300 max-w-screen-xl place-content-center dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
+  <div class="bg-blue-300 pt-12 dark:bg-gray-900 scrollbar-hide max-h-[85vh] min-h-[80vh] overflow-y-scroll max-w-screen-lg">
+    <div class="lg:grid lg:grid-cols-1 lg:gap-4 mt-5 bg-blue-300 dark:bg-gray-900">
 
   {% comment %} begin {% endcomment %}
 
   <div class="grid gap-5 lg:grid-cols-12 max-w-screen-xl max-h-[20vh] dark:bg-gray-900">
-    <div class="lg:col-span-12 p-1 text-center max-h-[25vh]">
-      <h1 class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-        Projects</h1>
-      <p class="max-md:font-light text-black md:text-lg 2xl:text-2xl lg:text-xl dark:text-gray-400">From
-        checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment
-        stack.</p>
+    <div class="lg:col-span-12 text-center max-h-[25vh]">
+      <h1 class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-4xl dark:text-white">
+        {{projects.title}}</h1>
+      <p class="max-md:font-light text-black md:text-lg 2xl:text-2xl dark:text-gray-400">From
+        {{projects.details}}</p>
     </div>
   </div>
   <div class="grid px-5 gap-5 mt-5 lg:grid-cols-12 max-w-screen-xl dark:bg-gray-900">
+
+    {% for heading,cat_cards in cat_zip %}
+    
     <div class="lg:col-span-4 text-center">
       <div class="lg:col-span-full max-h-[10vh] pb-2 border-b border-black dark:border-white text-center">
-        <h1 class="text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-3xl dark:text-white">
-          Web Developement </h1>
+        <h1 class="text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-2xl dark:text-white">
+          {{heading}} </h1>
       </div>
+      {% for card in cat_cards %}
+  
       <div id="accordion-collapse" data-accordion="collapse">
         <h2 id="accordion-collapse-heading-1">
           <button type="button"
             class="flex items-center mt-5 justify-between w-full p-5 max-md:font-medium text-left border border-black  dark:border-white focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
             data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
             aria-controls="accordion-collapse-body-1">
-            <span>Mini E-Com Website</span>
+            <span>{{card.card_title}}</span>
             <svg data-accordion-icon class="w-6 h-6 shrink-0" fill="currentColor" viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
@@ -40,26 +46,26 @@
               class="col-span-12 mt-5 p-3 rounded-xl border grid grid-cols-12 text-center bg-gray-900 dark:bg-white text-white dark:text-gray-900">
               <div class="col-span-7 place-self-center text-center">
                 <h1 class="text-xl font-light tracking-tight leading-none md:text-xl xl:text-xl">
-                  Mini E-Com Website </h1>
+                  {{card.excerpt}} </h1>
               </div>
               <div class="col-span-4 p-2 mx-auto ">
-                <img src="https://github.com/ArunBiju.png" class="rounded-full mx-auto" alt="mockup">
+                <img src="{{card.card_image.url}}" class="rounded-full mx-auto" alt="mockup">
               </div>
               <div class="col-span-6 mx-2 text-center">
-                <div class="border dark:border-black p-1 rounded-lg">
-                  <a href="#">
-                    <img src="images/github-mark-white.png" class="rounded-full dark:hidden max-h-10  mx-auto"
+                <div class="border bg-red-600 dark:border-black p-1 rounded-lg">
+                  <a href="{{card.git_link}}">
+                    <img src="{% static 'GitHub-Logos/GitHub_Logo_White.png' %}" class="rounded-full dark:hidden max-h-10  mx-auto"
                       alt="mockup">
-                    <img src="images/github-mark.png" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
+                    <img src="{% static 'GitHub-Logos/GitHub_Logo.png' %}" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
                   </a>
                 </div>
               </div>
               <div class="col-span-6 mx-2 text-center">
                 <div class="border dark:border-black p-1 rounded-lg">
-                  <a href="#">
-                    <img src="images/github-mark-white.png" class="rounded-full dark:hidden max-h-10  mx-auto"
+                  <a href="{{card.git_link}}">
+                    <img src="{% static 'GitHub-Logos/GitHub_Logo_White.png' %}" class="rounded-full dark:hidden max-h-10  mx-auto"
                       alt="mockup">
-                    <img src="images/github-mark.png" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
+                    <img src="{% static 'GitHub-Logos/GitHub_Logo.png' %}" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
                   </a>
                 </div>
               </div>
@@ -67,16 +73,9 @@
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    <!-- COL 1 END -->
-
-    <!-- COL 2 PRODUCT PAGE -->
-      
-    <!-- COL 2 END -->
-
-    <!-- COL 3 PRODUCT PAGE -->
- 
-    <!-- COL 3 END -->
+  {% endfor %}
 
   </div>
 </div>

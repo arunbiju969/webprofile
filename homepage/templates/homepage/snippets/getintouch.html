@@ -6,13 +6,13 @@
       <div class="row">
         <h1 class=" mb-4 text-4xl font-extrabold tracking-tight text-center leading-none md:text-5xl xl:text-6xl dark:text-white">
           Connect</h1>
-          <div class="grid grid-cols-4 bg-gray-900  dark:bg-gray-300 gap-2 border lg:min-w-[60vw] max-md:min-w-[90vw] max-w-screen-xl rounded-l-full rounded-r-full">
+          <div class="grid grid-cols-4 bg-gray-900  dark:bg-gray-300 gap-2 border xl:min-w-[50vw] max-lg::min-w-[60vw] max-md:min-w-[90vw] min-w-[90vw] rounded-l-full rounded-r-full">
             {% for account in social  %}
             <div class=" dark:border-black p-1 rounded-lg">
               <a href="{{account.link}}">
-                <img src="{{account.icon.url}}" class="rounded-full dark:hidden max-h-10  mx-auto"
+                <img src="{{account.icon.url}}" class=" dark:hidden max-h-10  mx-auto"
                   alt="mockup">
-                <img src="{{account.dark_icon.url}}" class="rounded-full max-h-0 dark:max-h-10 mx-auto" alt="mockup">
+                <img src="{{account.dark_icon.url}}" class=" max-h-0 dark:max-h-10 mx-auto" alt="mockup">
               </a>
             </div>  
             {% endfor %}
