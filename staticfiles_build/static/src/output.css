@@ -2110,10 +2110,6 @@ input:checked + .toggle-bg {
     width: auto;
   }
 
-  .md\:min-w-\[60vw\] {
-    min-width: 60vw;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -2217,10 +2213,6 @@ input:checked + .toggle-bg {
 
   .lg\:grid {
     display: grid;
-  }
-
-  .lg\:min-w-\[60vw\] {
-    min-width: 60vw;
   }
 
   .lg\:grid-cols-1 {
