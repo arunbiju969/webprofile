@@ -134,7 +134,7 @@ USE_TZ = True
 
 import os
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 if DEBUG:
     STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 else:
@@ -159,5 +159,5 @@ STATICFILES_FINDERS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Media 
-MEDIA_URL = '/media-cdn/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/homepage/uploads/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage', 'uploads', 'media')
