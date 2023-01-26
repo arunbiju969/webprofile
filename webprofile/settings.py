@@ -134,16 +134,19 @@ USE_TZ = True
 
 import os
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_URL = '/static/'
+if DEBUG:
+    STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 #Compressor
 
-COMPRESS_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
+COMPRESS_ROOT = BASE_DIR / 'static'
 
 COMPRESS_ENABLED = True
 
@@ -156,5 +159,5 @@ STATICFILES_FINDERS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Media 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage','uploads','media')
+MEDIA_URL = '/homepage/uploads/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'homepage', 'uploads', 'media')
