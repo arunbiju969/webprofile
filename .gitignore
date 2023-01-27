@@ -3,5 +3,6 @@ node_modules
 .vercel
 webprofile_venv
 env
-homepage/__pycache__/
-webprofile/__pycache__/
+homepage/__pycache__
+webprofile/__pycache__
+homepage/migrations/__pycache__
