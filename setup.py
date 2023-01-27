@@ -1,8 +1,8 @@
 import os
-import time
-from os import path, system
-import psycopg2
+os.system('pip install -r requirements.txt')
 from decouple import config
+import psycopg2
+
 
 def postgres_test():
     try:
@@ -34,7 +34,6 @@ def env_setup(initial):
 
 
 env_setup(initial=True)
-os.system('pip install -r requirements')
 
 if postgres_test():
     print ('Database Connection Successfully Established')
