@@ -19,6 +19,7 @@
         }
     ],
 
-    "python.terminal.activateEnvironment": true
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.typeCheckingMode": "basic"
 
 }
