@@ -1,8 +1,8 @@
 import os
-import time
 from os import path, system
-import psycopg2
 from decouple import config
+os.system('pip install -r requirements')
+
 
 def postgres_test():
     try:
@@ -32,7 +32,7 @@ def env_setup(initial):
     new_env.write(f"DEBUG=True\nSECRET_KEY='{key}'\nDB_HOST='{db_host}'\nDB_PASS='{db_pass}'")
     new_env.close()
 
-
+import psycopg2
 env_setup(initial=True)
 os.system('pip install -r requirements')
 
