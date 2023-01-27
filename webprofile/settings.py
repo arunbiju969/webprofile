@@ -26,8 +26,8 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['.vercel.app', '.eu.org','*']
-# ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['.vercel.app', '.eu.org']
+CSRF_TRUSTED_ORIGINS = ['https://*.github.dev']
 
 
 # Application definition
