@@ -1,4 +1,4 @@
-<div class="grid bg-blue-300 max-w-screen-xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
+<div class="grid bg-blue-300 max-w-screen-xl dark:bg-gray-900 shadow-2xl min-h-[100vh] mx-auto" id="{{self_id}}">  
   <div class="grid bg-blue-300 overflow-y-scroll pt-12 scrollbar-hide dark:bg-gray-900 max-h-[85vh] min-h-[80vh] max-w-screen-xl">
     <div class="grid mt-10 place-content-center bg-blue-300 dark:bg-gray-900">
 
@@ -6,7 +6,7 @@
       <div class="row">
         <h1 class=" mb-4 text-4xl font-extrabold tracking-tight text-center leading-none md:text-5xl xl:text-6xl dark:text-white">
           Connect</h1>
-          <div class="grid grid-cols-4 bg-gray-900  dark:bg-gray-300 gap-2 border xl:min-w-[50vw] max-lg::min-w-[60vw] max-md:min-w-[90vw] min-w-[90vw] rounded-l-full rounded-r-full">
+          <div class="grid grid-cols-4 drop-shadow-2xl bg-gray-900  dark:bg-gray-300 gap-2 border xl:min-w-[40vw] max-lg::min-w-[60vw] max-md:min-w-[90vw] min-w-[90vw] rounded-l-full rounded-r-full">
             {% for account in social  %}
             <div class=" dark:border-black p-1 rounded-lg">
               <a href="{{account.link}}">
