@@ -29,7 +29,7 @@ def env_setup(initial):
     os.system('clear')
     db_pass = input('Enter DB Password  : ')
     new_env = open(".env", "x", encoding="utf-8")
-    new_env.write(f"DEBUG=True\nSECRET_KEY='{key}'\nDB_HOST='{db_host}'\nDB_PASS='{db_pass}'")
+    new_env.write(f"DEBUG=True\nALLOWED_HOSTS='*'\nSECRET_KEY='{key}'\nDB_HOST='{db_host}'\nDB_PASS='{db_pass}'")
     new_env.close()
 
 
@@ -40,7 +40,7 @@ if postgres_test():
     print ('Database Connection Successfully Established')
 
 else:
-    print ('Database Connection not established re-run setup.py')
+    print ('Database Connection not established, \nplease confirm correctness of Database Host and password value and re-run \'python setup.py\'')
 
 
 
