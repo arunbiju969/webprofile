@@ -1,44 +1,32 @@
-<div class="grid bg-blue-300 max-w-screen-xl shadow-2xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
-  <div class="bg-blue-300 overflow-y-scroll pt-12 scrollbar-hide  dark:bg-gray-900 max-h-[90vh] min-h-[80vh] max-w-screen-xl">
+{% extends 'homepage/snippets/body_blueprint.html' %}
 
-    <div class="lg:col-span-12  mt-10 max-w-screen-xl text-center max-h-[25vh]">
-      <h1 class="text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">
-        Certifications</h1>
+{% block page_content %}
+
+<div class="lg:col-span-12 max-w-screen-xl text-center max-h-[25vh]">
+  <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-4xl dark:text-white">
+    Certifications</h1>
+</div>
+
+<div class="lg:grid lg:grid-cols-3 mt-5 lg:gap-4 dark:bg-gray-900">
+  {% for certificate in certificates %}
+  <div class="col border-2 border-gray-500  dark:border-white p-2 m-2 rounded-lg">
+    <div class="row pb-4 border-b-2 border-gray-500 dark:border-white">
+      <img src="{{certificate.image.url}}" class="mx-auto rounded-lg"
+      alt="mockup">
     </div>
-
-    <div class="lg:grid lg:grid-cols-3 mt-5 lg:gap-4 bg-blue-300 dark:bg-gray-900">
-
-      {% for certificate in certificates %}
-      <div class="col border-2 border-gray-500 dark:border-white p-2 m-2 rounded-lg">
-        <div class="row pb-4 border-b-2 border-gray-500 dark:border-white">
-          <img src="{{certificate.image.url}}" class="mx-auto rounded-lg"
-          alt="mockup">
-        </div>
-        <div class="grid gap-4 place-content-center row mt-2">
-          <a href="{{certificate.link}}">
-            <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Verify
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right ml-4" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-              <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-            </svg>
-            </button>
-          </a>
-        </div>
-      </div>
-      {% endfor %}    
-    </div>  
-  </div>
-  <div class="bg-blue-300 max-h-[10vh] dark:bg-gray-900 place-content-start max-w-screen-xl">
-    <div class="text-center">
-      <a href="#{{next_id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
-          class="mx-auto fill-gray-700 dark:fill-gray-50 animate-bounce" viewBox="0 0 16 16">
-          <path
-            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+    <div class="grid gap-4 place-content-center row mt-2">
+      <a href="{{certificate.link}}">
+        <button type="button" class="text-black drop-shadow-xl bg-green-300 hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:text-white dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Verify
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right ml-4" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+          <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
         </svg>
+        </button>
       </a>
     </div>
   </div>
-</div>
-  
+  {% endfor %}    
+</div> 
+
+{% endblock page_content %}

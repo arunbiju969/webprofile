@@ -1,117 +1,31 @@
+{% extends 'homepage/snippets/body_blueprint.html' %}
 
-      <button data-modal-target="popup-modal-{{card.card_title}}" data-modal-toggle="popup-modal-{{card.card_title}}" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300  min-w-full font-medium text-sm px-5 my-2 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-        {{card.card_title}}
-      </button>
-      
-      <div id="popup-modal-{{card.card_title}}" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-          <div class="relative w-full h-full max-w-md md:h-auto">
-              <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                  <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="popup-modal-{{card.card_title}}">
-                      <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-                  <div class="p-6 text-center">
-                    <img src="{{card.card_image.url}}" class="rounded-lg mx-auto mb-4 text-gray-400 w-20 h-20 dark:text-gray-200"
-                       alt="mockup">
-                    
-                      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">{{card.excerpt}}</h3>
-                      <a href="{{card.link_1}}">
-                        <button data-modal-hide="popup-modal-{{card.card_title}}" type="button" class="text-white bg-black dark:hover:bg-slate-900 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          {{card.button_one_name}}
-                      </button>
-                      </a>      
-                      <a href="{{card.link_2}}">
-                        <button data-modal-hide="popup-modal-{{card.card_title}}" type="button" class="text-black bg-white hover:bg-blue-200 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-900 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600 inline-flex">{{card.button_two_name}}
+{% block page_content %}
 
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right ml-1" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
-                            <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
-                          </svg>
-                        </button>
-                      </a>                               
-                  </div>
-              </div>
-          </div>
-      </div>
+<div class="grid max-w-screen-xl place-content-center border min-h-[60vh] max-h-[60vh] dark:bg-gray-900">
+  <h1 class=" mb-4 text-4xl font-extrabold tracking-tight text-center leading-none md:text-5xl xl:text-6xl dark:text-white">
+    Connect</h1>
+    <div class="grid grid-cols-4 drop-shadow-2xl bg-gray-900  dark:bg-gray-300 gap-2 border xl:min-w-[40vw] max-lg::min-w-[60vw] max-md:min-w-[90vw] min-w-[90vw] rounded-l-full rounded-r-full">
+      {% for account in social  %}
+      <div class=" dark:border-black p-1 rounded-lg">
+        <a href="{{account.link}}">
+          <img src="{{account.icon.url}}" class=" dark:hidden max-h-10  mx-auto"
+            alt="mockup">
+          <img src="{{account.dark_icon.url}}" class=" max-h-0 dark:max-h-10 mx-auto" alt="mockup">
+        </a>
+      </div>  
+      {% endfor %}
+    </div>
+</div>
+<div class="grid min-h-[10vh] text-center rotate-180 ">
+  <a href="#{{next_id}}">
+    <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
+      class="mx-auto fill-gray-700 dark:fill-gray-50 animate-bounce " viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
+    </svg>
+  </a>
+</div>
 
 
-
-
-
-
-
-
-
-
-
-
-      <div class="">
-        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
-          Vertically centered modal
-        </button>
-        <button type="button" class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" data-bs-toggle="modal" data-bs-target="#exampleModalCenteredScrollable">
-          Vertically centered scrollable modal
-        </button>
-      </div>
-      
-      <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-modal="true" role="dialog">
-        <div class="modal-dialog modal-dialog-centered relative w-auto pointer-events-none">
-          <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-              <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalScrollableLabel">
-                Modal title
-              </h5>
-              <button type="button"
-                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-                data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body relative p-4">
-              <p>This is a vertically centered modal.</p>
-            </div>
-            <div
-              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-              <button type="button"
-                class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
-                data-bs-dismiss="modal">
-                Close
-              </button>
-              <button type="button"
-                class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="modal fade fixed top-0 left-0 hidden w-full h-full outline-none overflow-x-hidden overflow-y-auto" id="exampleModalCenteredScrollable" tabindex="-1" aria-labelledby="exampleModalCenteredScrollable" aria-modal="true" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable relative w-auto pointer-events-none">
-          <div class="modal-content border-none shadow-lg relative flex flex-col w-full pointer-events-auto bg-white bg-clip-padding rounded-md outline-none text-current">
-            <div class="modal-header flex flex-shrink-0 items-center justify-between p-4 border-b border-gray-200 rounded-t-md">
-              <h5 class="text-xl font-medium leading-normal text-gray-800" id="exampleModalCenteredScrollableLabel">
-                Modal title
-              </h5>
-              <button type="button"
-                class="btn-close box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline"
-                data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body relative p-4">
-              <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy here to show how vertically centering the modal works when combined with scrollable modals. We also use some repeated line breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes longer than the predefined max-height of modal, content will be cropped and scrollable within the modal.</p>
-          <br><br><br><br><br><br><br><br><br><br>
-          <p>Just like that.</p>
-            </div>
-            <div
-              class="modal-footer flex flex-shrink-0 flex-wrap items-center justify-end p-4 border-t border-gray-200 rounded-b-md">
-              <button type="button"
-                class="inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out"
-                data-bs-dismiss="modal">
-                Close
-              </button>
-              <button type="button"
-                class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1">
-                Save changes
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+{% endblock page_content %}
