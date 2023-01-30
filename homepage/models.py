@@ -47,9 +47,10 @@ class CatTwoCards(models.Model):
     card_title = models.CharField(_("Card Title"), max_length=50)
     card_image = models.ImageField(_("Card Image"), upload_to='projects_page')
     excerpt = models.CharField(_("Card Exerpt"), max_length=50)
-    git_link = models.TextField(_("GitHub Link"))
-    blog_link = models.TextField(_("Blog Link"))
-    
+    button_one_name = models.CharField(_("Button One"), max_length=50, null=True, default='Button 1')
+    button_two_name = models.CharField(_("Button two"), max_length=50, null=True, default='Button 2')
+    link_1 = models.TextField(_("Link one"),null=True)
+    link_2 = models.TextField(_("Link two"),null=True)
 
     class Meta:
         verbose_name = _("Category Two Card")
@@ -62,8 +63,10 @@ class CatThreeCards(models.Model):
     card_title = models.CharField(_("Card Title"), max_length=50)
     card_image = models.ImageField(_("Card Image"), upload_to='projects_page')
     excerpt = models.CharField(_("Card Exerpt"), max_length=50)
-    git_link = models.TextField(_("GitHub Link"))
-    blog_link = models.TextField(_("Blog Link"))
+    button_one_name = models.CharField(_("Button One"), max_length=50, null=True, default='Button 1')
+    button_two_name = models.CharField(_("Button two"), max_length=50, null=True, default='Button 2')
+    link_1 = models.TextField(_("Link one"),null=True)
+    link_2 = models.TextField(_("Link two"),null=True)
     
 
     class Meta:

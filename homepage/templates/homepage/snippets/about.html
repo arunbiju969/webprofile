@@ -1,33 +1,19 @@
-<div class="grid bg-blue-300 max-w-screen-xl shadow-2xl dark:bg-gray-900 min-h-[100vh] mx-auto" id="{{self_id}}">  
-  <div class="lg:pt-12 dark:bg-gray-900 scrollbar-hide  max-h-[85vh] min-h-[80vh] max-w-screen-xl">
-    <div class="lg:grid lg:grid-cols-1 lg:gap-4 bg-blue-300 dark:bg-gray-900">
+{% extends 'homepage/snippets/body_blueprint.html' %}
 
-      <div class="grid max-w-screen-xl lg:pt-8 place-content-center dark:bg-gray-900 min-h-[90vh] mx-auto" id="about">
-        <div class="grid gap-5 border-gray-500 dark:border-white lg:grid-cols-12 rounded-xl max-w-screen-xl dark:bg-gray-900">
-          <div class="lg:col-span-5 place-content-center mx-auto">
-              <img src="{{about.profle_photo.url}}" class="rounded-full scale-75" alt="mockup">
-          </div>
-          <div class="lg:col-span-7 p-5 text-center place-self-center ">
-            <h1 class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
-              {{about.title}}</h1>
-            <p class=" mb-6 max-md:font-light lg:mb-8 md:text-lg lg:text-xl dark:text-white">
-              {{about.details}}</p>
-          </div>
-        </div>
-      </div>
+{% block page_content %}
 
-    </div>  
-  </div>
-  <div class=" bg-blue-300 dark:bg-gray-900 place-content-start max-w-screen-xl">
-    <div class="text-center ">
-      <a href="#{{next_id}}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"
-          class="mx-auto fill-gray-700 dark:fill-gray-50 animate-bounce " viewBox="0 0 16 16">
-          <path
-            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z" />
-        </svg>
-      </a>
+<div class="grid max-w-screen-xl pb-32 max-md:pb-72 min-h-screen justify-center lg:place-content-center dark:bg-gray-900 mx-auto">
+  <div class="lg:grid lg:grid-cols-12 rounded-xl max-md:pb-22 max-w-screen-xl dark:bg-gray-900">
+    <div class="lg:col-span-5 px-24 max-md:py-4 place-items-start mx-auto">
+        <img src="{{about.profle_photo.url}}" class="rounded-full" alt="mockup">
+    </div>
+    <div class="lg:col-span-7 px-5 max-md:mt-14 text-center place-self-center ">
+      <h1 class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+        {{about.title}}</h1>
+      <p class=" mb-6 text-justify px-5 max-md:font-light lg:mb-8 md:text-lg lg:text-xl dark:text-white">
+        {{about.details}}</p>
     </div>
   </div>
 </div>
-  
+
+{% endblock page_content %}

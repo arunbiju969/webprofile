@@ -1,0 +1,10 @@
+<!-- templates/index.html -->
+
+{% extends "_base_test.html" %}
+{% load static %}
+
+
+{% block pages %}
+{% include 'homepage/snippets/test.html' with next_id='projects' self_id='contact' %}
+{% endblock pages %}
+

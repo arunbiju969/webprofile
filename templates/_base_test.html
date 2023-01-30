@@ -30,9 +30,9 @@
 
 </head>
 
-<body class="bg-blue-300 dark:bg-gray-900 scrollbar-hide">
+<body class="bg-red-300 dark:bg-gray-900 scrollbar-hide">
 
-<nav
+{% comment %} <nav
   class="bg-white px-8 py-2 sm:px-4 dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b-2 border-gray-200 dark:border-gray-600">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a href="https://twitter.com/arun_aka_root" class="flex items-center">
@@ -89,14 +89,12 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> {% endcomment %}
 
-<div class="snap-y snap-mandatory h-screen overflow-scroll scroll-smooth scroll-pb-60 scrollbar-hide">  
 {% block pages %}
 
 
 {% endblock pages %}
-</div>
    
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
