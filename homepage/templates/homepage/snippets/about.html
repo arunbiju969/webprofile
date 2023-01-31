@@ -2,15 +2,15 @@
 
 {% block page_content %}
 
-<div class="grid max-w-screen-xl pb-32 max-md:pb-72 min-h-screen justify-center lg:place-content-center dark:bg-gray-900 mx-auto">
+<div class="grid max-w-screen-xl pb-60 min-h-screen justify-center place-content-center dark:bg-gray-900 mx-auto">
   <div class="lg:grid lg:grid-cols-12 rounded-xl max-md:pb-22 max-w-screen-xl dark:bg-gray-900">
-    <div class="lg:col-span-5 px-24 max-md:py-4 place-items-start mx-auto">
-        <img src="{{about.profle_photo.url}}" class="rounded-full" alt="mockup">
+    <div class="lg:col-span-5 max-md:py-4 max-md:px-10 lg:px-20 place-items-start">
+        <img src="{{about.profle_photo.url}}" class="rounded-full mx-auto" alt="mockup">
     </div>
-    <div class="lg:col-span-7 px-5 max-md:mt-14 text-center place-self-center ">
+    <div class="lg:col-span-7 px-5 mt-8 text-center place-self-center ">
       <h1 class=" mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
         {{about.title}}</h1>
-      <p class=" mb-6 text-justify px-5 max-md:font-light lg:mb-8 md:text-lg lg:text-xl dark:text-white">
+      <p class=" mb-6 text-justify px-2 max-md:font-light lg:mb-8 md:text-lg lg:text-xl dark:text-white">
         {{about.details}}</p>
     </div>
   </div>
