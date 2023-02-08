@@ -1,9 +1,11 @@
 node_modules
 .env
+.env.old
 .vercel
 webprofile_venv
 env
 homepage/__pycache__
 webprofile/__pycache__
 homepage/migrations/__pycache__
+homepage/migrations/
 static/CACHE/css
