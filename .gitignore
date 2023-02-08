@@ -7,5 +7,4 @@ env
 homepage/__pycache__
 webprofile/__pycache__
 homepage/migrations/__pycache__
-homepage/migrations/
 static/CACHE/css
