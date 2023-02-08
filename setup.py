@@ -34,7 +34,7 @@ def env_setup(initial):
 
 
 env_setup(initial=True)
-os.system('python manage.py make migrations')
+os.system('python manage.py makemigrations')
 os.system('python manage.py migrate')
 os.system('python manage.py loaddata whole.json')
 
