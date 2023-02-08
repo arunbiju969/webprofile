@@ -15,7 +15,7 @@ def postgres_test():
 
 def env_setup(initial):
     if initial:
-        print('Running Setup')      
+        print('Running Setup')      ṭ
     else:
         print('Database Connection not Established, reconfiguring. Make sure to to enter correct value for\n DB_HOST AND DB_PASS')
     try:
@@ -34,6 +34,7 @@ def env_setup(initial):
 
 
 env_setup(initial=True)
+os.system('python manage.py migrate')
 os.system('python manage.py loaddata whole.json')
 
 if postgres_test():
