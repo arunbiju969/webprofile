@@ -15,7 +15,7 @@ def postgres_test():
 
 def env_setup(initial):
     if initial:
-        print('Running Setup')      ṭ
+        print('Running Setup')
     else:
         print('Database Connection not Established, reconfiguring. Make sure to to enter correct value for\n DB_HOST AND DB_PASS')
     try:
