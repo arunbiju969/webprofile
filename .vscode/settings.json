@@ -20,6 +20,19 @@
     ],
 
     "python.terminal.activateEnvironment": true,
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "python.autoComplete.extraPaths": [
+        "c:/Users/Neo/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion"
+    ],
+    "python.linting.pylintArgs": [
+        "--init-hook",
+        "import sys; sys.path.append('c:/Users/Neo/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion')"
+    ],
+    "files.associations": {
+        ".mpyproject.json": "jsonc"
+    },
+    "python.analysis.extraPaths": [
+        "c:/Users/Neo/.vscode/extensions/rt-thread.rt-thread-micropython-1.0.11/microExamples/code-completion"
+    ]
 
 }
